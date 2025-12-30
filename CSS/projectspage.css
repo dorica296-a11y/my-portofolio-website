@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    height: 100vh;
+    background: #426cb1;
+}
+
+.animated_bg {
+    height: 100vh;
+}
+
+.navbar {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: #2a5eb2;
+    border-bottom: 1px solid #2a5eb2;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, alpha);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+    max-width: 1600px;
+}
+
+.nav-container .navbar-menu {
+    display: flex;
+    text-align: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-container .navbar-menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.7s ease;
+    white-space: nowrap;
+}
+
+.nav-container .navbar-menu li a:hover,
+.nav-container .navbar-menu li.active {
+    color: #162530;
+    background: rgba(188, 212, 229, 0.8);
+    border-bottom: 2px solid white;
+}
+
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: flex;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #ffffff;
+    transition: all 0.3 ease-in-out;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo2 {
+    display: none;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+span {
+    position: absolute;
+    pointer-events: none;
+    background: #ffffff;
+    animation: animate 5s linear infinite;
+    border-radius: 50%;
+}
+
+/* ===================== PROJECT SECTION ===================== */
+.project {
+    max-width: 1400px;
+    margin: auto;
+    padding: 6vh 2rem 10vh;
+}
+
+.project h1 {
+    font-size: 3rem;
+    margin-bottom: 5vh;
+    text-align: center;
+    font-family: "Roboto Slab", serif;
+}
+
+/* GRID */
+.project-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+}
+
+/* ===================== PROJECT CARD ===================== */
+.project-list {
+    position: relative;
+    padding: 2.5rem;
+    border-radius: 28px;
+
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.02));
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-list:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 40px 70px rgba(0, 0, 0, 0.45);
+}
+
+/* REMOVE IMAGE SPACE (since src is empty) */
+.project-list img {
+    display: none;
+}
+
+/* ===================== CONTENT ===================== */
+.project-list-container h2 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5vh;
+    font-family: "Roboto Slab", serif;
+    color: white;
+}
+
+.project-list-container h4 {
+    display: inline-block;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    margin-left: -3px;
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-family: "Roboto Slab", serif;
+    background: rgba(45, 200, 160, 0.2);
+    color: #2dc8a0;
+    font-weight: 500;
+}
+
+.project-list-container p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    font-family: "Roboto Slab", serif;
+    color: rgba(230, 236, 243, 0.85);
+}
+
+/* ===================== SKILLS / BUTTONS ===================== */
+.skill-used, .live-demo {
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-right: 0.8rem;
+    font-family: "Roboto Slab", serif;
+
+    padding: 10px 18px;
+    border-radius: 14px;
+
+    font-size: 0.9rem;
+    color: #7dd3fc;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    transition: 0.3s ease;
+}
+
+.skill-used:hover {
+    background: rgba(125, 211, 252, 0.2);
+}
+
+.live-demo:hover {
+    background: rgba(34, 255, 0, 0.25);
+    color: #22ff00;
+    border-color: rgba(34, 255, 0, 0.6);
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0) translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    25% {
+        transform: scale(0.25) translateY(-100%) rotate(180deg);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(0.5) translateY(-200%) rotate(360deg);
+        opacity: 1;
+    }
+
+    75% {
+        transform: scale(0.75) translateY(-300%) rotate(180deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1) translateY(-400%) rotate(0deg);
+    }
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1000px) {
+    .project-content {
+        grid-template-columns: 1fr;
+    }
+
+    .project h1 {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 1075px) {
+    .navbar {
+        backdrop-filter: none;
+    }
+
+    .nav-container .navbar-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem !important;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-container .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+        z-index: 999;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 580px) {
+    .logo {
+        display: none;
+    }
+
+    .logo2 {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.7rem;
+    }
+
+    .nav-container .navbar-menu li a {
+        font-size: 1.2rem;
+        padding: 3px 15px;
+    }
+}

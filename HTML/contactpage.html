@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo Vincentius Suwandi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./../CSS/contactpage.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Ricardo Vincentius Suwandi</div>
+            <div class="logo2">RVS</div>
+            <button class="navbar-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+
+            <ul class="navbar-menu">
+                <li><a href="./homepage.html">Home</a></li>
+                <li><a href="./aboutpage.html">About</a></li>
+                <li><a href="./projectspage.html">Projects</a></li>
+                <li><a href="./contactpage.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="contact">
+        <h1>Get In Touch</h1>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <div class="social-info" onclick="goEmail()">
+                    <i class="fa-solid fa-envelope"></i>
+                    <h6>dorica296@gmail.com</h6>
+                </div>
+                <div class="social-info" onclick="goLinkedIn()">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <h6>LinkedIn</h6>
+                </div>
+                <div class="social-info" onclick="goGitHub()">
+                    <i class="fa-brands fa-github"></i>
+                    <h6>GitHub</h6>
+                </div>
+                <div class="social-info" onclick="goInstagram()">
+                    <i class="fa-brands fa-instagram"></i>
+                    <h6>Instagram</h6>
+                </div>
+
+            </div>
+            <form class="direct-contact" action="https://formspree.io/f/xykyvojv" method="POST">
+                <h3>I'm Open for Collaboration</h3>
+
+                <label>Name</label>
+                <input type="text" name="name" required>
+
+                <label>Email</label>
+                <input type="email" name="email" required>
+
+                <label>Message</label>
+                <textarea name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+</body>
+<script src="./../JS/contactpage_script.js"></script>
+
+</html>

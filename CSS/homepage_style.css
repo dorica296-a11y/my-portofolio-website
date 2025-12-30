@@ -1,0 +1,536 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    height: 100vh;
+    background: #426cb1;
+}
+
+.animated_bg {
+    height: 100vh;
+}
+
+.navbar {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: #2a5eb2;
+    border-bottom: 1px solid #2a5eb2;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, alpha);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+    max-width: 1600px;
+}
+
+.nav-container .navbar-menu {
+    display: flex;
+    text-align: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-container .navbar-menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.7s ease;
+    white-space: nowrap;
+}
+
+.nav-container .navbar-menu li a:hover,
+.nav-container .navbar-menu li.active {
+    color: #162530;
+    background: rgba(188, 212, 229, 0.8);
+    border-bottom: 2px solid white;
+}
+
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: flex;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #ffffff;
+    transition: all 0.3 ease-in-out;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo2 {
+    display: none;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+span {
+    position: absolute;
+    pointer-events: none;
+    background: #ffffff;
+    animation: animate 5s linear infinite;
+    border-radius: 50%;
+}
+
+section {
+    margin-top: 6vh;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0vh 2vw;
+}
+
+.responsive-home-content h1 {
+    display: none;
+}
+
+.responsive-home-content h3 {
+    display: none;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.home-top-img img {
+    display: none;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px goldenrod;
+    transition: 0.4s ease-in-out;
+}
+
+.home-content h1 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2.9vw;
+    font-weight: 800;
+    margin-top: 0;
+    line-height: 1;
+}
+
+.home-content h3 {
+    font-family: "Ubuntu", sans-serif;
+    margin: 1.5vw 0;
+    font-weight: 500;
+    font-size: 1.9vw;
+}
+
+.home-content h5 {
+    display: none;
+}
+
+.home-content p {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.1vw;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.home-img {
+    padding-right: 6vw;
+    padding-left: 4vw;
+}
+
+.home-img img {
+    width: 24vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px goldenrod;
+    transition: 0.4s ease-in-out;
+}
+
+.home-img img:hover {
+    box-shadow: 0 0 25px goldenrod,
+        0 0 50px goldenrod,
+        0 0 100px goldenrod;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: blue;
+}
+
+::-webkit-scrollbar-track {
+    background-color: blueviolet;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 4vw;
+    margin-left: 10vw;
+    padding-bottom: 5vh;
+    padding-right: 8vw;
+}
+
+.projectBtn {
+    padding: 3vh 3vw;
+    font-family: "Roboto Slab", serif;
+    font-size: 1.8vw;
+    background-image: linear-gradient(70deg, rgb(104, 5, 28), rgb(48, 78, 34));
+    color: whitesmoke;
+    border: none;
+    box-shadow: 4px 4px 4px rgb(255, 233, 177);
+    border-radius: 2vw;
+    font-weight: 400;
+    letter-spacing: 0.1vw;
+}
+
+.projectBtn:hover {
+    box-shadow: 2px 2px 4px rgb(255, 233, 177);
+    color: rgb(193, 183, 183);
+    transform: translateX(1px) translateY(1px);
+}
+
+.projectBtn:active {
+    box-shadow: 0px 0px 0px rgb(255, 233, 177);
+    color: rgb(118, 115, 113);
+    transform: translateX(2px) translateY(2px);
+}
+
+.contactBtn {
+    padding: 3vh 3vw;
+    font-family: "Roboto Slab", serif;
+    font-size: 1.8vw;
+    background-image: linear-gradient(70deg, rgb(104, 5, 28), rgb(48, 78, 34));
+    color: whitesmoke;
+    border: none;
+    box-shadow: 4px 4px 4px rgb(255, 233, 177);
+    border-radius: 2vw;
+    font-weight: 400;
+    letter-spacing: 0.1vw;
+}
+
+.contactBtn:hover {
+    box-shadow: 2px 2px 4px rgb(255, 233, 177);
+    color: rgb(193, 183, 183);
+    transform: translateX(1px) translateY(1px);
+}
+
+.contactBtn:active {
+    box-shadow: 0px 0px 0px rgb(255, 233, 177);
+    color: rgb(118, 115, 113);
+    transform: translateX(2px) translateY(2px);
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0) translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    25% {
+        transform: scale(0.25) translateY(-100%) rotate(180deg);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(0.5) translateY(-200%) rotate(360deg);
+        opacity: 1;
+    }
+
+    75% {
+        transform: scale(0.75) translateY(-300%) rotate(180deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1) translateY(-400%) rotate(0deg);
+    }
+}
+
+@media (max-width: 1075px) {
+    .navbar {
+        backdrop-filter: none;
+    }
+
+    .nav-container .navbar-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem !important;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-container .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+        z-index: 999;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 580px) {
+    .logo {
+        display: none;
+    }
+
+    .logo2 {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.7rem;
+    }
+
+    .nav-container .navbar-menu li a {
+        font-size: 1.2rem;
+        padding: 3px 15px;
+    }
+}
+
+@media (max-width: 980px) {
+    section {
+        margin-top: 3.5vh;
+    }
+
+    .home {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0vh 4vw;
+    }
+
+    .responsive-home-content h1 {
+        display: block;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 4.6vw;
+        font-weight: 800;
+        margin-top: 0;
+        line-height: 1;
+    }
+
+    .responsive-home-content h3 {
+        display: block;
+        font-family: "Ubuntu", sans-serif;
+        margin: 1.5vh 0;
+        font-weight: 500;
+        font-size: 2.6vw;
+    }
+
+    .responsive-home-content {
+        text-align: center;
+        margin-bottom: 2vh;
+    }
+
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        margin: 3vh 9vw;
+        text-align: left;
+    }
+
+    .home-top-img img {
+        display: block;
+        width: 48vw;
+        border-radius: 15%;
+        box-shadow: 0 0 25px goldenrod;
+        transition: 0.4s ease-in-out;
+    }
+
+    .home-content h1 {
+        display: none;
+    }
+
+    .home-content h3 {
+        display: none;
+    }
+
+    .home-content h5 {
+        display: block;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 3vw;
+        font-weight: 600;
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .home-content p {
+        font-family: "Ubuntu", sans-serif;
+        font-size: 2vw;
+        font-weight: 300;
+        line-height: 1.8;
+        text-align: justify;
+    }
+
+    .home-img img {
+        display: none;
+    }
+
+    .home-top-img img:hover {
+        box-shadow: 0 0 10px goldenrod,
+            0 0 30px goldenrod,
+            0 0 50px goldenrod;
+    }
+
+    .options {
+        margin-top: 0vh;
+        justify-content: center;
+        padding-bottom: 8vh;
+        padding-right: 10vw;
+    }
+
+    .projectBtn {
+        padding: 4vh 6vw;
+        font-size: 2.8vw;
+        box-shadow: 3px 3px 3px rgb(255, 233, 177);
+        border-radius: 4vw;
+    }
+
+    .projectBtn:hover {
+        box-shadow: 1.5px 1.5px 2.25px rgb(255, 233, 177);
+    }
+
+    .projectBtn:active {
+        box-shadow: 0px 0px 0px rgb(255, 233, 177);
+    }
+
+    .contactBtn {
+        padding: 4vh 6vw;
+        font-size: 2.8vw;
+        box-shadow: 3px 3px 3px rgb(255, 233, 177);
+        border-radius: 4vw;
+    }
+
+    .contactBtn:hover {
+        box-shadow: 1.5px 1.5px 2.25px rgb(255, 233, 177);
+    }
+
+    .contactBtn:active {
+        box-shadow: 0px 0px 0px rgb(255, 233, 177);
+    }
+}
+
+@media (max-width: 800px) {
+    .responsive-home-content h1 {
+        font-size: 36px;
+    }
+
+    .responsive-home-content h3 {
+        font-size: 18px;
+    }
+
+    .home-content h5 {
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .home-content p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .responsive-home-content h1 {
+        font-size: 30px;
+    }
+
+    .responsive-home-content h3 {
+        font-size: 15px;
+    }
+
+    .options {
+        justify-content: center;
+        margin-top: 0vh;
+        padding-bottom: 5vh;
+        padding-right: 10vw;
+    }
+
+    .projectBtn {
+        padding: 3vh 7vw;
+        box-shadow: 2px 2px 3px rgb(255, 233, 177);
+        border-radius: 5.5vw;
+    }
+
+    .projectBtn:hover {
+        box-shadow: 1px 1px 2px rgb(255, 233, 177);
+    }
+
+    .projectBtn:active {
+        box-shadow: 0px 0px 0px rgb(255, 233, 177);
+    }
+
+    .contactBtn {
+        padding: 3vh 7vw;
+        box-shadow: 2px 2px 3px rgb(255, 233, 177);
+        border-radius: 5.5vw;
+    }
+
+    .contactBtn:hover {
+        box-shadow: 1px 1px 2px rgb(255, 233, 177);
+    }
+
+    .contactBtn:active {
+        box-shadow: 0px 0px 0px rgb(255, 233, 177);
+    }
+}

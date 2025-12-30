@@ -1,0 +1,489 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    height: 100vh;
+    background: #426cb1;
+}
+
+.animated_bg {
+    height: 100vh;
+}
+
+.navbar {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: #2a5eb2;
+    border-bottom: 1px solid #2a5eb2;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, alpha);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 2rem;
+    max-width: 1600px;
+}
+
+.nav-container .navbar-menu {
+    display: flex;
+    text-align: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-container .navbar-menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 3px 20px;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    transition: all 0.7s ease;
+    white-space: nowrap;
+}
+
+.nav-container .navbar-menu li a:hover,
+.nav-container .navbar-menu li.active {
+    color: #162530;
+    background: rgba(188, 212, 229, 0.8);
+    border-bottom: 2px solid white;
+}
+
+.navbar-toggle {
+    display: none;
+    background: transparent;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: flex;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #ffffff;
+    transition: all 0.3 ease-in-out;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo2 {
+    display: none;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+span {
+    position: absolute;
+    pointer-events: none;
+    background: #ffffff;
+    animation: animate 5s linear infinite;
+    border-radius: 50%;
+}
+
+section {
+    margin-top: 6vh;
+}
+
+/* ===== ABOUT LAYOUT ===== */
+.about {
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about h1 {
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2.9vw;
+    font-weight: 800;
+    margin-bottom: 3vw;
+}
+
+.about-content {
+    width: 100%;
+    max-width: 1400px;
+    grid-template-columns: 1.1fr 1fr;
+    padding: 0 5vw;
+    display: grid;
+    gap: 3vw;
+}
+
+/* ===== GLASS CARD ===== */
+.glass {
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.04));
+    backdrop-filter: blur(14px);
+    border-radius: 2vw;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== PROFILE ===== */
+.about-myself {
+    padding: 3vw;
+    padding-bottom: 60vh;
+    text-align: center;
+    align-self: start;
+}
+
+.about-myself h2 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2.2vw;
+    margin-bottom: 1.5vw;
+}
+
+.about-myself img {
+    width: 17vw;
+    border-radius: 50%;
+    margin-bottom: 1.5vw;
+    box-shadow:
+        0 0 0 6px rgba(100, 150, 255, 0.25),
+        0 0 40px rgba(100, 150, 255, 0.6);
+}
+
+.about-myself p {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 1.3vw;
+    line-height: 1.8;
+}
+
+/* ===== SKILLS ===== */
+.skills {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vw;
+}
+
+.tech {
+    padding: 2vw;
+}
+
+.tech h3 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 2.2vw;
+}
+
+.tech h5 {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.4vw;
+    font-weight: 500;
+    color: #9cc4ff;
+    margin: .5vw 0;
+}
+
+.tech p {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 1.2vw;
+    line-height: 1.6;
+}
+
+/* ===== SOFT SKILLS ===== */
+.soft {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8vw;
+    margin-top: 1vw;
+    margin-bottom: 5vw;
+}
+
+.soft-skill {
+    font-family: "Ubuntu", sans-serif;
+    padding: .5vw 1.3vw;
+    border-radius: 999px;
+    background: rgba(120, 160, 255, 0.25);
+    border: 1px solid rgba(120, 160, 255, 0.35);
+    font-size: 1.2vw;
+    transition: .3s;
+}
+
+.soft-skill:hover {
+    transform: translateY(-3px);
+    background: rgba(120, 160, 255, 0.4);
+}
+
+/* ===== SECTION TITLES ===== */
+.section-title {
+    font-family: "Roboto Slab", serif;
+    font-size: 2vw;
+    font-weight: 600;
+    /* margin-bottom: 1.5vw; */
+    color: #eaf2ff;
+}
+
+.soft-title {
+    margin-top: 1vw;
+    margin-bottom: -1vw;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0) translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    25% {
+        transform: scale(0.25) translateY(-100%) rotate(180deg);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(0.5) translateY(-200%) rotate(360deg);
+        opacity: 1;
+    }
+
+    75% {
+        transform: scale(0.75) translateY(-300%) rotate(180deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1) translateY(-400%) rotate(0deg);
+    }
+}
+
+@media (max-width: 1075px) {
+    .navbar {
+        backdrop-filter: none;
+    }
+
+    .nav-container .navbar-menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.7rem !important;
+        position: absolute;
+        height: 100vh;
+        width: 250px;
+        top: 0;
+        right: 0;
+        padding: 5rem 1.5rem;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-container .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+        z-index: 999;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 580px) {
+    .logo {
+        display: none;
+    }
+
+    .logo2 {
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 1.7rem;
+    }
+
+    .nav-container .navbar-menu li a {
+        font-size: 1.2rem;
+        padding: 3px 15px;
+    }
+}
+
+@media (max-width: 980px) {
+    section {
+        margin-top: 3.5vh;
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+    .about-myself {
+        padding-bottom: 44vh;
+    }
+
+    .soft {
+        margin-bottom: 4.5vw;
+    }
+}
+
+@media (max-width: 1100px) {
+    .about-myself {
+        padding-bottom: 41vh;
+    }
+}
+
+@media (max-width: 1000px) {
+    .about-myself {
+        padding-bottom: 38vh;
+    }
+}
+
+@media (max-width: 950px) {
+    .about-myself {
+        padding-bottom: 36vh;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .about-myself {
+        padding-bottom: 3vh;
+    }
+
+    .about-myself img {
+        width: 180px;
+    }
+
+    .about h1 {
+        font-size: 4vw;
+    }
+
+    .about-myself h2 {
+        font-size: 3vw;
+    }
+
+    .about-myself p {
+        font-size: 1.5vw;
+    }
+
+    .tech h3 {
+        font-size: 2.5vw;
+    }
+
+    .tech h5 {
+        font-size: 1.9vw;
+    }
+
+    .tech p {
+        font-size: 1.5vw;
+    }
+
+    .soft-skill {
+        font-size: 1.5vw;
+    }
+
+    .section-title {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .about h1 {
+        font-size: 4.3vw;
+    }
+
+    .about-myself h2 {
+        font-size: 3.3vw;
+    }
+
+    .about-myself p {
+        font-size: 1.8vw;
+    }
+
+    .tech h3 {
+        font-size: 2.8vw;
+    }
+
+    .tech h5 {
+        font-size: 2.2vw;
+    }
+
+    .tech p {
+        font-size: 1.8vw;
+    }
+
+    .soft-skill {
+        font-size: 1.8vw;
+    }
+
+    .section-title {
+        font-size: 2.8vw;
+    }
+}
+
+@media (max-width: 500px) {
+    .about h1 {
+        font-size: 4.6vw;
+    }
+
+    .about-myself h2 {
+        font-size: 3.6vw;
+    }
+
+    .about-myself p {
+        font-size: 2.1vw;
+    }
+
+    .tech h3 {
+        font-size: 3.1vw;
+    }
+
+    .tech h5 {
+        font-size: 2.5vw;
+    }
+
+    .tech p {
+        font-size: 2.1vw;
+    }
+
+    .soft-skill {
+        font-size: 2.1vw;
+    }
+
+    .section-title {
+        font-size: 3.1vw;
+    }
+}

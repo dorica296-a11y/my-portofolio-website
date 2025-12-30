@@ -54,9 +54,9 @@ function createSquare() {
 setInterval(createSquare, 150);
 
 function goToProjects() {
-    window.location.href = "../HTML/projectspage.html";
+    window.location.href = "./HTML/projectspage.html";
 }
 
 function goToContact() {
-    window.location.href = "../HTML/contactpage.html";
+    window.location.href = "./HTML/contactpage.html";
 }
